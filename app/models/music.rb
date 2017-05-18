@@ -9,7 +9,11 @@ class Music
   # intv - integer - interval in semitones
   def interval(root, intv)
     rootIndex = notes.index(root)
+    
+    # This fancy code will basically allow indexes greater than the length of
+    # the array to loop around to the beginning.
     notes[(rootIndex+intv) % notes.length]
+    
   end
   
   

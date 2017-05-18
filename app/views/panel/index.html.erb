@@ -1,1 +1,7 @@
-<%= @note.interval("F" , 9) %>
+<%= @note.interval( @root , 9) %>
+
+<%= form_tag("/panel", method: "post") do %>
+  <%= label_tag(:r, "root:") %>
+  <%= text_field_tag(:r) %>
+  <%= submit_tag("update") %>
+<% end %>
