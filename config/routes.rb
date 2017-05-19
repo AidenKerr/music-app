@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'panel#index'
+  root 'chords#index'
   
-  resources 'panel', only: [:create]
+  resources :chords, only: [:create, :index]
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
