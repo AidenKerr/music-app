@@ -1,12 +1,12 @@
 <%= @chord.intv %> semitones from <%= @chord.root %>:
-<%= @chord.interval(@chord.root, @chord.intv) %>
+<%= @chord.interval %>
 
 <%= form_for @chord do |f| %>
   <%= f.label :root %>
   <%= f.text_field :root %><br />
-  
+
   <%= f.label :intv %>
   <%= f.text_field :intv %><br />
-  
+
   <%= f.submit %>
 <% end %>
