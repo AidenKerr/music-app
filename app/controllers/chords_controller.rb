@@ -1,12 +1,11 @@
 class ChordsController < ApplicationController
   def index
-    if @chord == nil
-      @chord = Chord.new(root: "C", intv: 5)
+    if !@chord
+      @chord = Chord.new(root: "C", interval: 5)
     end
   end
   
   def create
-    @chord = Chord.new(root: params[:root], intv: params[:intv])
-    redirect_to root_path
+    @chord = Chord.new(root: params[:chord][:root], interval: params[:chord][:interval].to_i, accidental: params[:chord][:accidental])
   end
 end

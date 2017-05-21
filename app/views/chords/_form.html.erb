@@ -1,0 +1,53 @@
+<%= form_for @chord do |f| %>
+  
+  <div>
+    <%= f.label "A" %>
+    <%= f.radio_button :root, "A" %>
+  </div>
+  
+  <div>
+    <%= f.label "B" %>
+    <%= f.radio_button :root, "B" %>
+  </div>
+  
+  <div>
+    <%= f.label "C" %>
+    <%= f.radio_button :root, "C" %>
+  </div>
+  
+  <div>
+    <%= f.label "D" %>
+    <%= f.radio_button :root, "D" %>
+  </div>
+  
+  <div>
+    <%= f.label "E" %>
+    <%= f.radio_button :root, "E" %>
+  </div>
+  
+  <div>
+    <%= f.label "F" %>
+    <%= f.radio_button :root, "F" %>
+  </div>
+  
+  <div>
+    <%= f.label "G" %>
+    <%= f.radio_button :root, "G" %>
+  </div><br />
+  
+  (accidentals currently not working)
+  <div>
+    <%= f.label "FLAT" %>
+    <%= f.radio_button :accidental, "b" %>
+  </div
+  
+  <div>
+    <%= f.label "SHARP" %>
+    <%= f.radio_button :accidental, "#" %>
+  </div><br />
+  
+  <%= f.label :interval %>
+  <%= f.text_field :interval %><br />
+  
+  <%= f.submit %>
+<% end %>
