@@ -35,7 +35,6 @@
     <%= f.radio_button :root, "G" %>
   </div><br />
   
-  (accidentals currently not working)
   <div>
     <%= f.label "FLAT" %>
     <%= f.radio_button :accidental, "b" %>
@@ -44,6 +43,11 @@
   <div>
     <%= f.label "SHARP" %>
     <%= f.radio_button :accidental, "#" %>
+  </div><br />
+  
+  <div>
+    <%= f.label "NATURAL" %>
+    <%= f.radio_button :accidental, "" %>
   </div><br />
   
   <%= f.label :interval %>
