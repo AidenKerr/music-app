@@ -3,7 +3,7 @@ class Chord
   
   # rootBase    The root with no accidentals. (C -> C, Bb -> B, A# -> A)
   # displayRoot The root including accidentals. Used for display purposes
-  # interval    The interval between two notes (in semitones)
+  # intervals   
   # accidental  Either sharp (#) or flat (b)
   # chordType   (todo) The type of chord requested
   attr_accessor :rootBase, :displayRoot, :intervals, :accidental, :chordType
