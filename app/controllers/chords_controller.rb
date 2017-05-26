@@ -1,11 +1,10 @@
 class ChordsController < ApplicationController
   def index
-    if !@chord
-      @chord = Chord.new(root: "C", interval: 5)
-    end
+    @chord = Chord.new(rootBase: "E", intervals: "0 4 7 11")
   end
   
   def create
-    @chord = Chord.new(root: params[:chord][:root], interval: params[:chord][:interval].to_i, accidental: params[:chord][:accidental])
+    
+    @chord = Chord.new(rootBase: params[:chord][:rootBase], intervals: params[:chord][:intervals].to_i, accidental: params[:chord][:accidental])
   end
 end
