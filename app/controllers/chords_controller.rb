@@ -4,7 +4,6 @@ class ChordsController < ApplicationController
   end
   
   def create
-    
-    @chord = Chord.new(rootBase: params[:chord][:rootBase], intervals: params[:chord][:intervals].to_i, accidental: params[:chord][:accidental])
+    @chord = Chord.new(rootBase: params[:chord][:rootBase], intervals: params[:chord][:intervals], accidental: params[:chord][:accidental])
   end
 end

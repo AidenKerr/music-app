@@ -3,7 +3,7 @@ class Chord
   
   # rootBase    The root with no accidentals. (C -> C, Bb -> B, A# -> A)
   # displayRoot The root including accidentals. Used for display purposes
-  # intervals   
+  # intervals   String of intervals used in the chord separated by spaces
   # accidental  Either sharp (#) or flat (b)
   # chordType   (todo) The type of chord requested
   attr_accessor :rootBase, :displayRoot, :intervals, :accidental, :chordType
@@ -35,25 +35,24 @@ class Chord
     # Will be implemented later
     # getIntervalsFromChordType
     
-    findInterval
-  end
-  
-  def findInterval
-    
-    
-    # PROBLEM
-    # because of the way the program is set up to expect accidentals
-    # I'll solve this later
-    
     self.intervals = self.intervals.split(" ").map{ |n| n.to_i }
     
     chordArray = Array.new
     
     for interval in intervals
+      chordArray.push(findInterval(interval))
+    end
+    
+    chordArray
+  end
+
+
+  def findInterval(interval)
       # indexes greater than the length of the array to loop around to the beginning.
       intervalNote = notesArray[(@rootIndex + interval) % notesArray.length]
       
       # choosing the appropriate enharmonic note.
+      # This doesn't actually work... Look into how to decide this
       case accidental
         when '#'
           intervalNote = intervalNote.split(" ").first
@@ -61,9 +60,6 @@ class Chord
           intervalNote = intervalNote.split(" ").last
       end
       
-      chordArray.push(intervalNote)
-    end
-    
-    chordArray
+      intervalNote
   end
 end
