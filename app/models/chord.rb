@@ -5,8 +5,7 @@ class Chord
   # displayRoot The root including accidentals. Used for display purposes
   # intervals   String of intervals used in the chord separated by spaces
   # accidental  Either sharp (#) or flat (b)
-  # chordType   (todo) The type of chord requested
-  attr_accessor :rootBase, :displayRoot, :intervals, :accidental, :chordType
+  attr_accessor :rootBase, :displayRoot, :intervals, :accidental
   
   def notesArray
     # Array of all notes.
@@ -32,16 +31,7 @@ class Chord
         self.displayRoot = self.rootBase
     end
     
-    # Will be implemented later
-    # getIntervalsFromChordType
-    
-    self.intervals = self.intervals.split(" ").map{ |n| n.to_i }
-    
-    chordArray = Array.new
-    
-    for interval in intervals
-      chordArray.push(findInterval(interval))
-    end
+    chordArray = self.intervals.split(" ").map{ |n| findInterval(n.to_i) }
     
     chordArray
   end
