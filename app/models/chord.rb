@@ -31,9 +31,8 @@ class Chord
         self.displayRoot = self.rootBase
     end
     
-    chordArray = self.intervals.split(" ").map{ |n| findInterval(n.to_i) }
+    self.intervals.split(" ").map{ |n| findInterval(n.to_i) }
     
-    chordArray
   end
 
 
@@ -42,12 +41,16 @@ class Chord
       intervalNote = notesArray[(@rootIndex + interval) % notesArray.length]
       
       # choosing the appropriate enharmonic note.
-      # This doesn't actually work... Look into how to decide this
+      # Chooses based on currently selected accidental on root note
+      # If no accidental on root, it defaults to a sharp
+      # Eventually there should be a toggle.
       case accidental
         when '#'
           intervalNote = intervalNote.split(" ").first
         when 'b'
           intervalNote = intervalNote.split(" ").last
+        else
+          intervalNote = intervalNote = intervalNote.split(" ").first
       end
       
       intervalNote
