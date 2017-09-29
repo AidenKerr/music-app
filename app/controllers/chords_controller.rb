@@ -1,6 +1,6 @@
 class ChordsController < ApplicationController
   def index
-    @chord = Chord.new(rootBase: "E", intervals: "0 4 7 11")
+    @chord = Chord.new(rootBase: "C", intervals: "0 4 7")
   end
   
   def create
