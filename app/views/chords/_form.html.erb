@@ -1,68 +1,76 @@
 <%= form_for @chord, html: { id: "chord-form" } do |f| %>
   
-  <div>
-    <%= f.label :rootBase, "A" %>
-    <%= f.radio_button :rootBase, "A" %>
-  </div>
+  <div id="notes">
+    <div>
+      <%= f.label :rootBase, "A" %>
+      <%= f.radio_button :rootBase, "A" %>
+    </div>
   
-  <div>
-    <%= f.label :rootBase, "B" %>
-    <%= f.radio_button :rootBase, "B" %>
-  </div>
-  
-  <div>
-    <%= f.label :rootBase, "C" %>
-    <%= f.radio_button :rootBase, "C" %>
-  </div>
-  
-  <div>
-    <%= f.label :rootBase, "D" %>
-    <%= f.radio_button :rootBase, "D" %>
-  </div>
-  
-  <div>
-    <%= f.label :rootBase, "E" %>
-    <%= f.radio_button :rootBase, "E" %>
-  </div>
-  
-  <div>
-    <%= f.label :rootBase, "F" %>
-    <%= f.radio_button :rootBase, "F" %>
-  </div>
-  
-  <div>
-    <%= f.label :rootBase, "G" %>
-    <%= f.radio_button :rootBase, "G" %>
+    <div>
+      <%= f.label :rootBase, "B" %>
+      <%= f.radio_button :rootBase, "B" %>
+    </div>
+    
+    <div>
+      <%= f.label :rootBase, "C" %>
+      <%= f.radio_button :rootBase, "C" %>
+    </div>
+    
+    <div>
+      <%= f.label :rootBase, "D" %>
+      <%= f.radio_button :rootBase, "D" %>
+    </div>
+    
+    <div>
+      <%= f.label :rootBase, "E" %>
+      <%= f.radio_button :rootBase, "E" %>
+    </div>
+    
+    <div>
+      <%= f.label :rootBase, "F" %>
+      <%= f.radio_button :rootBase, "F" %>
+    </div>
+    
+    <div>
+      <%= f.label :rootBase, "G" %>
+      <%= f.radio_button :rootBase, "G" %>
+    </div>
   </div><br />
   
-  <div>
-    <%= f.label :accidental, "Flat" %>
-    <%= f.radio_button :accidental, "b" %>
-  </div
   
-  <div>
-    <%= f.label :accidental, "Sharp" %>
-    <%= f.radio_button :accidental, "#" %>
-  </div><br />
   
-  <div>
-    <%= f.label :accidental, "Natural" %>
-    <%= f.radio_button :accidental, "" %>
+  <div id="accidentals">
+    <div>
+      <%= f.label :accidental, "Flat" %>
+      <%= f.radio_button :accidental, "b" %>
+    </div>
+    <div>
+      <%= f.label :accidental, "Sharp" %>
+      <%= f.radio_button :accidental, "#" %>
+    </div>
+    <div>
+      <%= f.label :accidental, "Natural" %>
+      <%= f.radio_button :accidental, "" %>
+    </div>
   </div><br />
   
   <div id="intervals">
-    <%= f.label :intervals, "Major Chord" %>
-    <%= f.radio_button :intervals, "0 4 7" %>
-    <br>
-    <%= f.label :intervals, "Minor Chord" %>
-    <%= f.radio_button :intervals, "0 3 7" %>
-  </div>
+    <div>
+      <%= f.label :intervals, "Major Chord" %>
+      <%= f.radio_button :intervals, "0 4 7" %>
+    </div>
+    <div>
+      <%= f.label :intervals, "Minor Chord" %>
+      <%= f.radio_button :intervals, "0 3 7" %>
+    </div>
+    <div>
+      <%= f.label :intervals, "Custom" %>
+      <%= f.radio_button :intervals, "custom", id: "custom-option" %> <br />
+      <input type="text" id="custom-value" style="display: none">
+    </div>
+  </div><br />
   
-  <div id="intervals">
-    <%= f.label :intervals, "Custom" %>
-    <%= f.radio_button :intervals, "custom", id: "custom-option" %> <br />
-    <input type="text" id="custom-value" style="display: none">
+  <div class="submit">
+    <%= f.submit %>
   </div>
-  
-  <%= f.submit %>
 <% end %>
